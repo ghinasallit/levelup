@@ -1,0 +1,31 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "core-js/es6/*": [
+        "node_modules/core-js/es/*"
+      ],
+      "core-js/es7/*": [
+        "node_modules/core-js/es/*"
+      ]
+    },
+    "outDir": "../out-tsc/app",
+    "types": ["node"]
+  },
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.d.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts",
+    "environments/*.ts"
+    ],
+  "angularCompilerOptions": {
+    "enableIvy": true
+  }
+}

@@ -1,0 +1,102 @@
+<div class="d-flex  login m-auto ">
+  <div class="radius-15 border-dash-secondary text-center  p-3  info-side py-5 ">
+    <h5 class="font-weight-normal text-primary my-5">{{'_Login' | translate}}</h5>
+    <div>
+      <h4 class="text-primary text-secondary">{{'_WelcomeBack' | translate}}</h4>
+      <p class="desc text-secondary">{{'_KeepConnected' | translate}}</p>
+      <button class="btn btn-secondary text-secondary  bg-white border-dash-secondary  w-100 mt-5 "
+              routerLink="/auth/login">{{'_SignIn' | translate}}</button>
+    </div>
+  </div>
+  <div class=" text-center bg-secondary py-5 form-side">
+    <!--    code form-->
+    <h4 class="font-weight-normal text-white ">{{'_Register' | translate}}</h4>
+    <div class="text-center my-3"><img src="assets/images/auth/register.svg" class="icon" alt=""></div>
+    <form [formGroup]="registerForm" class="w-75 mx-auto  ">
+      <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>{{'_FirstName'|  translate}}</mat-label>
+        <input matInput placeholder="" formControlName="first_name">
+        <mat-icon matSuffix>sentiment_satisfied_alt</mat-icon>
+        <mat-error *ngIf="registerForm.get('first_name').hasError('required')">
+          {{'_FirstNameRequired' |  translate}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>{{'_LastName'|  translate}}</mat-label>
+        <input matInput placeholder="" formControlName="last_name">
+        <mat-icon matSuffix>sentiment_satisfied_alt</mat-icon>
+        <mat-error *ngIf="registerForm.get('last_name').hasError('required')">
+          {{'_LastNameRequired' |  translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>{{'_Email'|  translate}}</mat-label>
+        <input matInput placeholder="" formControlName="email">
+        <mat-icon matSuffix>alternate_email</mat-icon>
+        <mat-error>
+          <div *ngIf="p.email.invalid && (p.email.dirty || p.email.touched)"
+               class="text-danger">
+            <div *ngIf="p.email.errors.required">
+              {{'_EmailRequired' | translate}}
+            </div>
+            <div *ngIf="p.email.errors.email">{{'_EmailNotValid' | translate}}</div>
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-100">
+        <mat-label>{{'_Mobile' | translate}}</mat-label>
+        <span matPrefix>+971 &nbsp;</span>
+        <input type="tel" matInput placeholder="554 5***" formControlName="phone" maxlength="9">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+        <mat-error>
+          {{'_MobileRequired' |  translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>{{'_Password'|  translate}}</mat-label>
+        <input matInput placeholder="" formControlName="password" type="password">
+        <mat-icon matSuffix>vpn_key</mat-icon>
+        <mat-error>
+          <div *ngIf="p.password.invalid && (p.password.dirty ||p.password.touched)"
+               class="text-danger">
+            <div *ngIf="p.password.errors.required">
+              {{'_PasswordRequired' | translate}}
+            </div>
+            <div
+              *ngIf="p.password.errors.minlength || p.password.errors.maxLength"> {{'_PasswordValidation' | translate}}</div>
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>{{'_ConfirmPassword'|  translate}}</mat-label>
+        <input matInput placeholder="" formControlName="ConfirmPassword" type="password">
+        <mat-icon matSuffix>vpn_key</mat-icon>
+        <mat-error>
+          <div *ngIf="p.ConfirmPassword.invalid && (p.ConfirmPassword.dirty || p.ConfirmPassword.touched)"
+               class="text-danger">
+            <div *ngIf="p.ConfirmPassword.errors.required">
+              {{'_ConfirmPasswordRequired' | translate}}
+            </div>
+            <div *ngIf="p.ConfirmPassword.errors.mustMatch"> {{'_PasswordMustMutch' | translate}}</div>
+          </div>
+        </mat-error>
+      </mat-form-field>
+
+
+      <div class="mt-3">
+        <button
+          class="btn btn-secondary radius-15 w-100 text-white border-dash-primary  mb-3"
+          [disabled]="registerForm.invalid"
+          (click)="register('company')">{{'_Register' | translate}}</button>
+      </div>
+      <div>
+        <app-social-integration></app-social-integration>
+      </div>
+
+    </form>
+
+
+  </div>
+</div>

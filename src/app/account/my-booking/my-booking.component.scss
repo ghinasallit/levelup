@@ -1,0 +1,105 @@
+@import "../../../_variables.scss";
+
+.my-booking {
+
+
+  button {
+    font-size: 12px
+  }
+
+  .classes {
+    overflow-x: auto;
+    img {
+      width: 6rem;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  .remaining {
+    font-size: 3rem;
+  }
+
+  .classes {
+    font-size: 2rem;
+  }
+
+  .timing {
+    p {
+      font-size: 15px;
+    }
+  }
+
+  .class {
+    .active-dote {
+      background: #5bbb5b;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin: auto 7px auto 0;
+    }
+
+    .unactive-dote {
+      background: #e7f605;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin: auto 7px auto 0;
+    }
+
+    .text-red{
+      background: red !important;
+
+    }
+
+    img {
+      width: 2.5rem;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+  }
+
+  .border-bottom-dash-primary {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23D2AF66FF' stroke-width='4' stroke-dasharray='13%2c 14' stroke-dashoffset='8' stroke-linecap='square'/%3e%3c/svg%3e");
+    height: 1px;
+  }
+
+  ::ng-deep .mat-expansion-indicator::after {
+    color: white;
+  }
+
+  .fa-ban {
+    color: red;
+  }
+
+  .fa {
+    font-size: 18px;
+  }
+
+  .expire {
+    color: red;
+
+  }
+
+  .active {
+    border: 1px solid;
+    border-radius: 10px;
+    background: $primary !important;
+
+    img {
+      background: $secondary;
+    }
+
+    p {
+      color: $secondary !important;
+      background: $primary;
+      margin: 0;
+    }
+
+  }
+}

@@ -1,0 +1,105 @@
+<div class="container py-5 booking">
+  <div class="row">
+    <div class="col-md-2">
+      <div *ngIf="!isgetShedule">
+        <ngx-shimmer-loading [shape]="'square'" [width]="'150px'" class="mx-1"></ngx-shimmer-loading>
+        <ngx-shimmer-loading [shape]="'square'" [width]="'150px'" class="mx-1"></ngx-shimmer-loading>
+      </div>
+      <div class="package-list" *ngIf="isgetShedule">
+        <div class="radius-5  mx-2  bg-secondary text-center mb-2 classes" style="cursor: pointer"
+             [ngClass]="this.pagination.id == item._id? 'active' : '' "
+             *ngFor="let item of categories" (click)="this.pagination.id = item._id; getMyPackages() ; getSchedule()">
+          <div class="radius-5 bg-secondary p-2"><img [src]="restService.fileUrl + item.icon" alt="" class="radius-5">
+          </div>
+          <p class="text-white p-2 radius-5">{{item.title}}</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-10">
+      <div *ngIf="!isgetShedule">
+        <ngx-shimmer-loading [shape]="'rect'" [width]="'100%'" [height]="'150px'"></ngx-shimmer-loading>
+        <ngx-shimmer-loading [shape]="'rect'" [width]="'100%'" [height]="'150px'"></ngx-shimmer-loading>
+        <ngx-shimmer-loading [shape]="'rect'" [width]="'100%'" [height]="'150px'"></ngx-shimmer-loading>
+      </div>
+      <div *ngIf="isgetShedule">
+        <ng-container *ngFor="let item of myPackages">
+          <div class="col-md-12 radius-5 bg-secondary py-3 font-family-octin my-2"
+               *ngIf="(item.packageObj.classes_count > item.bookingclasses.length ) &&
+              (((curr | date: 'yyyy') < (item.endDate | date: 'yyyy' ))
+              || ((curr | date: 'yyyy') === (item.endDate | date: 'yyyy' ) && (curr | date: 'MM/dd') <= (item.endDate | date: 'MM/dd' )))">
+            <h4 class="text-white font-weight-normal text-uppercase  ">{{item.packageObj.categoryObj.title}}</h4>
+            <div class="w-100 border-bottom-dash-primary mb-4"></div>
+            <div class="d-flex justify-content-between flex-wrap">
+              <div class="text-white"><span
+                class="text-primary remaining">{{item.packageObj.classes_count - item.bookingclasses.length }}
+                /{{item.packageObj.classes_count}}</span> {{'_Remaining' | translate}}
+              </div>
+              <div class="d-flex w-50 timing">
+                <div class="d-flex bg-primary p-1 radius-5 mx-2">
+                  <img src="assets/images/details/price.svg" class="bg-white radius-5 w-25 " alt="">
+                  <div class="mx-1">
+                    <p class="m-0">{{'_Start' | translate}}</p>
+                    <p class="m-0">{{item.startDate | date: 'MMM/dd/yyyy'}}</p>
+                  </div>
+                </div>
+                <div class="d-flex  p-1 radius-5 border border-primary">
+                  <img src="assets/images/details/price.svg" class="bg-white w-25 radius-5" alt="">
+                  <div class="mx-1 text-white">
+                    <p class="m-0">{{'_Ending' | translate}}</p>
+                    <p class="m-0">{{item.endDate | date: 'MMM/dd/yyyy'}}</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="w-100 book mt-2">
+              <button class="btn btn-primary"
+                      (click)="package = item; openCalender()">{{'_BookClass' | translate}}</button>
+
+            </div>
+
+          </div>
+          <div class="mt-5 mx-4 calender" *ngIf="package && package._id === item._id ">
+            <mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+            </mwl-demo-utils-calendar-header>
+
+            <div [ngSwitch]="view">
+              <mwl-calendar-month-view
+                *ngSwitchCase="'month'"
+                [viewDate]="viewDate"
+                [events]="events"
+                (dayClicked)="dayClicked($event.day); getScheduleDetails($event.day , item)"
+                [activeDayIsOpen]="true"
+                (eventClicked)="eventClicked($event)"
+              >
+              </mwl-calendar-month-view>
+              <!--            <mwl-calendar-week-view-->
+              <!--              *ngSwitchCase="'week'"-->
+              <!--              [viewDate]="viewDate"-->
+              <!--              [events]="events"-->
+              <!--              (eventClicked)="eventClicked($event)"-->
+              <!--            >-->
+              <!--            </mwl-calendar-week-view>-->
+              <!--            <mwl-calendar-day-view-->
+              <!--              *ngSwitchCase="'day'"-->
+              <!--              [viewDate]="viewDate"-->
+              <!--              [events]="events"-->
+              <!--              (eventClicked)="eventClicked($event)"-->
+              <!--            >-->
+              <!--            </mwl-calendar-day-view>-->
+            </div>
+          </div>
+
+        </ng-container>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+

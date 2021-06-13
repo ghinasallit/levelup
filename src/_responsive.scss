@@ -1,0 +1,300 @@
+//    >> breakpoint-next(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+
+@include media-breakpoint-between(sm, lg) {
+  #header {
+    padding: 0 15px !important;
+  }
+
+  .nav-link {
+    font-size: 15px !important;
+    margin: 5px !important;
+
+  }
+
+  .user-account img {
+    width: 1.3rem !important;;
+  }
+
+  .nav-item {
+
+    a {
+      font-size: 18px !important;
+      padding: 0.5rem 0rem;
+    }
+  }
+}
+
+
+@include media-breakpoint-between(sm, md) {
+
+  .menu-link {
+    font-size: 13.9px !important;
+  }
+
+  .timing {
+  width: 75% !important;
+  }
+
+  #image-link {
+    width: 15% !important;
+
+    img {
+      width: 100% !important;
+    }
+  }
+
+  .list-header {
+    width: 60% !important;
+  }
+
+  .list-classes .title {
+    right: 40% !important;
+    left: 42% !important;
+  }
+
+  .booking {
+    .classes {
+      .w-50 {
+        width: 65% !important;
+      }
+
+      img {
+        width: 3rem !important;
+      }
+    }
+
+
+  }
+
+}
+
+@include media-breakpoint-between(xxs, sm) {
+  #header {
+    padding: 0 0px !important;
+  }
+
+  .logo {
+  }
+
+  #normal-header {
+    display: none !important;
+  }
+
+  #responsive-header {
+    width: 100%;
+    justify-content: space-between !important;
+    display: flex !important;
+    position: relative !important;
+
+    a {
+      text-decoration: none;
+    }
+
+    .logo {
+      padding: 0 15px !important;
+      display: flex;
+      align-items: flex-start;
+      text-decoration: none;
+
+      img {
+        width: 8rem !important;
+
+      }
+    }
+
+    label {
+      padding: 0 15px !important;
+
+    }
+
+    > ul.menu {
+      position: absolute;
+      width: 100%;
+      z-index: 100;
+      top: 60px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      flex-basis: 100%;
+      max-height: 0;
+      transition: max-height .2s ease-out;
+      overflow: auto;
+      background: rgba(8, 53, 45, 0.9);
+
+      > li {
+        min-width: 8rem;
+        margin: 20px 0;
+
+        img {
+          width: 1.5rem !important;
+        }
+
+        > a {
+          display: flex;
+          align-items: center;
+          padding: 0 2rem;
+          text-decoration: none;
+
+          &:hover {
+            background-color: #f5f6f7;
+          }
+        }
+      }
+    }
+
+    .menu-icon {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      position: relative;
+      user-select: none;
+
+      .navicon {
+        background: $primary;
+        display: block;
+        height: .2rem;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 1.8rem;
+
+        &:before, &:after {
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          transition: all .2s ease-out;
+          width: 100%;
+          background: $primary !important;
+        }
+
+
+        &:before {
+          top: .5rem;
+          background: $primary !important;
+        }
+
+        &:after {
+          top: -.5rem;
+          background: $primary !important;
+        }
+      }
+    }
+
+
+    .menu-btn {
+      display: none;
+
+      &:hover {
+        background-color: #f4f4f4;
+      }
+
+      &:checked {
+        ~ .menu {
+          max-height: calc(85vh - 5rem);
+        }
+
+        ~ .menu-icon {
+          .navicon {
+            background: transparent;
+
+            &:before {
+              transform: rotate(-45deg);
+            }
+
+            &:after {
+              transform: rotate(45deg);
+            }
+          }
+
+          &:not(.steps) .navicon {
+            &:before, &:after {
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .details {
+    .classes img {
+      width: 4.5rem !important;
+    }
+  }
+
+  .desc img {
+    width: 100% !important;
+  }
+
+  .list-classes {
+    .title {
+      width: 100%;
+      text-align: center;
+      position: unset !important;
+    }
+
+    button {
+      width: 75% !important;
+    }
+  }
+
+  .application {
+    padding: 0 !important;
+    text-align: center;
+
+    .w-75 {
+      width: 100% !important;
+    }
+
+    h1 {
+      font-size: 3rem !important;
+    }
+  }
+  .coming-soon {
+    h1 {
+      font-size: 4rem !important;
+    }
+
+    text-align: center;
+
+    .p-4 {
+      padding: 0 !important;
+    }
+
+    .slash {
+      right: 0 !important;
+
+      img {
+        width: 5rem !important;
+      }
+    }
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .account-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .timing {
+    width: 100% !important;
+  }
+
+
+  .booking {
+    .package-list {
+      text-align: center;
+      display: flex;
+    }
+
+
+  }
+
+
+}
+

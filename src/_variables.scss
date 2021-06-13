@@ -1,0 +1,109 @@
+// ltr to rtl
+@import "rtl";
+
+// Colors
+$primary: #d2af66;
+$secondary: #08352d;
+$success: #f0efef;
+$nativeColor: $primary;
+$primary-disabled: #de8b8b;
+
+$primary-background: #1f1f1f;
+$secondary-background: #f4f4f4;
+$third-background: #ffffff0d;
+$banner-background: #5f5f5f7d;
+
+$form-control-border-color: #acabab;
+
+$banner: rgba(214, 81, 79, 0.75);
+
+$visited-link: #fff;
+
+$primary-shadow: #dae5ef;
+$transparent: #ffffff3b;
+
+$black: #000;
+$gray: #333333;
+$light-gray: #A0A0A0;
+$lighter-gray: #fafafa;
+$lighter2-gray: #e7e7e7;
+$lightest-gray: #fafafa;
+$red: #d85251;
+$white: #fff;
+$yellow: #e3b502;
+$orange: #ea6c37;
+$green: #28a745;
+
+$overlay: #000000cc;
+
+$lighter-card-bg: #e6e6e6;
+
+$separate-line: #a0a0a030;
+$separate-light: #e8e8e8;
+
+
+// Shadows
+$gray-shadow: 0 0 0 0.2rem rgba(82, 82, 82, 0.25);
+
+// Borders
+$border-size: 3px;
+
+// Typography
+$font-family-base: 'Cairo Regular', sans-serif !default;
+$headings-font-family: 'Cairo Regular', sans-serif !default;
+$font-weight-base: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-bold: 600 !default;
+$headings-font-weight: 800 !default;
+
+$font-size-base: 1.1rem;
+
+$h1-font-size: 2.7rem;
+$h2-font-size: $font-size-base * 1.50;
+
+$paragraph-size: 1.25em !default;
+$paragraph-medium-size: 1em !default;
+$paragraph-small-size: 0.75em !default;
+$paragraph-xsmall-size: 0.50em !default;
+
+$primary-btn-size: 14px !default;
+$primary-btn-size-sm: 11px !default;
+
+/* Functions */
+$grid-columns: 12;
+$margin-rem: 20;
+$padding-rem: 20;
+
+/* Headings Differences */
+$pixel-10: 10px;
+$pixel-15: 15px;
+$pixel-20: 20px;
+$pixel-25: 25px;
+$pixel-30: 30px;
+$pixel-40: 40px;
+
+
+/*Font override*/
+$primary-font: 'Cairo Regular', sans-serif;
+$secondary-font: '';
+$font-family-sans-serif: $primary-font;
+
+
+//$grid-breakpoints: (
+//  xxs: 0,
+//  xs: 376px,
+//  sm: 576px,
+//  md: 800px,
+//  lg: 992px,
+//  xl: 1200px,
+//  xxl: 1600px
+//) !default;
+//
+//$container-max-widths: (
+//  xs: 320px,
+//  sm: 540px,
+//  md: 720px,
+//  lg: 960px,
+//  xl: 1140px,
+//  xxl: 1610px
+//) !default;

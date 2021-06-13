@@ -1,0 +1,41 @@
+@import "../../_variables.scss";
+
+
+.booking{
+  .package-list{
+    overflow-x: auto;
+  }
+}
+
+.classes {
+  img {
+    width: 5rem;
+  }
+}
+
+.active {
+  border: 1px solid;
+  border-radius: 10px;
+  background: $primary !important;
+
+  img {
+    background: $secondary;
+  }
+
+  p {
+    color: $secondary !important;
+    background: $primary;
+    margin: 0;
+  }
+
+
+}
+
+.remaining {
+  font-size: 2rem;
+}
+
+.calender {
+  direction: ltr;
+  text-align: left;
+}

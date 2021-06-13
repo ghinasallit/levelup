@@ -1,0 +1,20 @@
+@import "fonts";
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+
+@import "animations";
+@import "bootstrap-overrides";
+@import "responsive";
+
+@import "main";
+
+@import "aos";
+
+// Font Awesome Styles
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+// Main Material Styles
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+

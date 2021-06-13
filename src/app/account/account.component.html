@@ -1,0 +1,36 @@
+<div class="bg-success account">
+  <div class="container-fluid">
+    <div class="row  bg-primary">
+      <div class="col-md-12 py-5 position-relative ">
+        <h1 class="text-center text-white title">{{'_MyAccount' | translate}}</h1>
+        <img src="assets/images/account.jpg" class="w-100" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <div class="row   my-5">
+          <div class="col-md-3 radius-8  list  p-0  radius-15">
+            <div class="bg-secondary radius-15 py-4 p-3 account-list">
+              <div class="text-white bg-success  text-secondary radius-15 pl-4 py-2 my-2 px-2 " routerLink="profile"
+                   routerLinkActive="active" style="cursor: pointer">
+                {{'_MyProfile' | translate}}
+              </div>
+              <div class="text-white bg-success text-secondary pl-4 py-2 my-2 px-2 radius-15" routerLink="my-booking"
+                   routerLinkActive="active" style="cursor: pointer">
+                {{'_MyBooking' | translate}}
+              </div>
+              <div class="text-white bg-success text-secondary pl-4 py-2 my-2 px-2 radius-15" routerLink="privacy"
+                   routerLinkActive="active" style="cursor: pointer">
+                {{'_Privacy' | translate}}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9 radius-8  item-participation">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

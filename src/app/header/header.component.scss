@@ -1,0 +1,141 @@
+@import "../../_variables.scss";
+
+#header {
+  background: rgba(8, 53, 45, 0.9);
+  //position: fixed;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  //flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  font-size: 19px;
+  min-height: 100px;
+  z-index: 1;
+}
+
+/* Normal Header */
+
+
+.w-20{
+  width: 20%;
+}
+
+.w-55{
+  width: 55%;
+}
+
+.menu-link {
+  color: $primary;
+  margin-top: 10px !important;
+
+}
+
+.active-menu-links {
+  color: black;
+}
+
+#normal-header {
+  //position: fixed;
+  display: flex;
+  //flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  //font-size: 19px;
+  min-height: 100px;
+}
+
+
+#nav-bar ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+#nav-bar {
+
+  .nav-link {
+    padding: 25px 10px;
+    margin: 12px;
+    background: $secondary;
+    align-items: center;
+    cursor: pointer;
+    width: 20%;
+  }
+
+  .active {
+    border: 1px solid $primary;
+    background: none;
+    color: $primary;
+  }
+
+  img {
+    height: 2.5rem;
+  }
+
+  a{
+    text-align: center;
+  }
+}
+
+.user-account{
+  img{
+    width: 1.7rem;
+  }
+
+
+}
+
+#nav-bar ul, a {
+  text-decoration: none;
+}
+
+
+/* Responsive Header */
+
+#responsive-header {
+  display: none;
+}
+
+#image-button-black {
+  display: none;
+  border: none;
+}
+
+#image-button-black:hover {
+  cursor: pointer;
+}
+
+#image-button-black:focus {
+  outline: 0;
+}
+
+ul{
+  list-style: none;
+}
+
+.dropdown {
+  z-index: 10000;
+  .dropdown-menu {
+    transition: all 0.5s;
+    overflow: hidden;
+    transform-origin: top center;
+    transform: scale(1,0);
+    display: block;
+  }
+  &:hover {
+    .dropdown-menu {
+      transform: scale(1);
+    }
+  }
+
+  .dropdown-item:hover{
+    background: $primary;
+    color: $secondary
+  }
+}
+

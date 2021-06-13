@@ -1,0 +1,51 @@
+::ng-deep .slick-dots {
+  bottom: 0 !important
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0 !important;
+}
+
+::ng-deep .slick-dots li button:before{
+  font-size: 15px;
+}
+
+.bg-join{
+  background-image: url("../../assets/images/home/join.svg");
+  background-size: cover;
+  padding: 22px;
+  color: white;
+  text-align: center;
+}
+
+.tracking{
+  top: 50%;
+  left: 13%;
+
+  .position-absolute{
+    top: 5px;
+    left: 5px;
+  }
+
+  img{
+    width: 24px
+  }
+
+  input{
+    height: 40px;
+    width: 15rem;
+    padding-left: 45px;
+    border: 0;
+  }
+
+  button{
+    font-size: 1rem !important;
+  }
+
+
+  h1{
+    font-family: "Octin Regular";
+  }
+}
+
+

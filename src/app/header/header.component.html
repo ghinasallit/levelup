@@ -1,0 +1,102 @@
+<header id="header" class="header px-5">
+
+  <div id="normal-header">
+    <a href="#" id="image-link" class="w-25"><img src="assets/images/header/logo.svg" class="w-75" alt="Reverse Logo"
+                                                  id="header-img"/></a>
+    <nav id="nav-bar" class="w-50 list-header">
+      <ul>
+        <li class="nav-link d-flex flex-column" id="menu-item" routerLink="/home" routerLinkActive="active"><img
+          src="assets/images/header/home.svg" class="" alt=""><a
+          class="menu-link"> {{'_Home' | translate}} </a></li>
+        <li class="nav-link d-flex flex-column" id="menu-item" routerLink="/events" routerLinkActive="active"><img
+          src="assets/images/header/events.svg" class="" alt=""><a
+          class="menu-link"> {{'_Events' | translate}} </a></li>
+        <li class="nav-link d-flex flex-column" id="menu-item" routerLinkActive="active">
+          <img src="assets/images/header/booking.svg" class="">
+          <a (click)="appService.saveURL('/booking')" *ngIf="!isLogin" class="menu-link"
+             routerLink="/auth/login">  {{'_BookNow' | translate}}
+          </a>
+          <a class="menu-link" *ngIf="isLogin" routerLink="/booking">  {{'_BookNow' | translate}}</a>
+        </li>
+        <li class="nav-link d-flex flex-column" id="menu-item" routerLink="/about" routerLinkActive="active"><img
+          src="assets/images/header/about-us.svg" class="" alt=""><a
+          class="menu-link"> {{'_AboutUs' | translate}} </a></li>
+        <li class="nav-link d-flex flex-column" id="menu-item" routerLink="/contact" routerLinkActive="active"><img
+          src="assets/images/header/contact.png" class="" alt=""><a
+          class="menu-link"> {{'_ContactUs' | translate}} </a></li>
+      </ul>
+    </nav>
+    <div class="d-flex user-account justify-content-end w-25">
+      <img src="assets/images/header/user.svg" routerLink="/auth/login" class="mx-2" alt="" style="cursor: pointer"
+           *ngIf="!isLogin">
+      <div class="my-auto " *ngIf="isLogin">
+        <ul class="" style="cursor: pointer">
+          <li class="nav-item dropdown dropdown-slide dropdown-hover">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{name}}
+            </a>
+            <div class="dropdown-menu bg-success text-left px-2" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" routerLink="/account/profile">{{'_MyProfile' | translate}}</a>
+              <a class="dropdown-item" routerLink="/account/my-booking" >{{'_MyBooking' | translate}}</a>
+              <a class="dropdown-item" routerLink="/account/privacy">{{'_Privacy' | translate}}</a>
+              <a class="dropdown-item" (click)="logout()">{{'_Logout' | translate}}</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <img src="assets/images/header/notification.svg"  class="mx-2" alt="" style="cursor: pointer">
+      <img src="assets/images/header/lang-en.svg"  *ngIf="appService.currentLanguage == 'ar'" (click)="appService.switchLanguage('en')" class="mx-2" alt="" style="cursor: pointer">
+      <img src="assets/images/header/lang-en.svg"  *ngIf="appService.currentLanguage == 'en'" (click)="appService.switchLanguage('ar')" class="mx-2" alt="" style="cursor: pointer">
+    </div>
+  </div>
+
+
+  <div id="responsive-header">
+    <a routerLink="/" class="logo"><img src="assets/images/header/logo.svg" class="" alt="Reverse Logo"></a>
+    <input class="menu-btn" type="checkbox" id="menu-btn"/>
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li>
+        <div class="d-flex user-account  px-0 mx-2">
+          <img src="assets/images/header/user.svg" routerLink="/auth/login" class="mx-2" alt="" style="cursor: pointer"
+               *ngIf="!isLogin">
+
+          <div class="my-auto " *ngIf="isLogin">
+            <ul class="pl-3" style="cursor: pointer">
+              <li class="nav-item dropdown dropdown-slide dropdown-hover">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{name}}
+                </a>
+                <div class="dropdown-menu bg-success text-left px-2" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" routerLink="/account/profile">{{'_MyProfile' | translate}}</a>
+                  <a class="dropdown-item" routerLink="/account/my-booking">{{'_MyBooking' | translate}}</a>
+                  <a class="dropdown-item" routerLink="/account/privacy">{{'_Privacy' | translate}}</a>
+                  <a class="dropdown-item" (click)="logout()">{{'_Logout' | translate}}</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <img src="assets/images/header/notification.svg" class="mx-2" alt="" style="cursor: pointer">
+          <img src="assets/images/header/lang-en.svg" class="mx-2" alt="" style="cursor: pointer">
+        </div>
+      </li>
+      <li><a routerLink="/home"><img src="assets/images/header/home.svg" class="mx-2">{{'_Home' | translate}}</a></li>
+      <li><a routerLink="/events" routerLinkActive="active"><img src="assets/images/header/events.svg"
+                                                                 class="mx-2"> {{'_Events' | translate}}</a></li>
+      <li>
+        <a (click)="appService.saveURL('/booking')" *ngIf="!isLogin"
+             routerLink="/auth/login"> <img src="assets/images/header/booking.svg" class="mx-2"> {{'_BookNow' | translate}}
+      </a>
+        <a  *ngIf="isLogin" routerLink="/booking"> <img src="assets/images/header/booking.svg" class="mx-2"> {{'_BookNow' | translate}}</a>
+      </li>
+      <li><a routerLink="/about"><img src="assets/images/header/about-us.svg" class="mx-2"> {{'_AboutUs' | translate}}
+      </a></li>
+      <li><a routerLink="/contact"><img src="assets/images/header/contact.png"
+                                        class="mx-2"> {{'_ContactUs' | translate}}</a></li>
+
+    </ul>
+
+  </div>
+
+</header>
+

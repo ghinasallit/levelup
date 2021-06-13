@@ -1,0 +1,23 @@
+@import "../../_variables.scss";
+
+.account {
+  .title {
+      top: 30%;
+      left: 40%;
+      z-index: 10;
+  }
+
+
+  .list {
+    div {
+      background: #643590
+    }
+
+    .active {
+      background: $primary !important;
+      color: white !important;
+    }
+  }
+
+
+}

@@ -1,0 +1,38 @@
+@import "../../_variables.scss";
+
+.bg-top{
+  background-image: url("../../assets/images/details/bg-top.jpg");
+}
+
+.line {
+  bottom: 0;
+  height: 0;
+}
+
+.radius-10 {
+  border-radius: 10px;
+}
+
+
+.desc {
+  .content {
+    border-left: 1px solid $primary;
+    border-bottom: 1px solid $primary;
+    border-right: 1px dashed $primary;
+  }
+}
+
+.featured{
+  img{
+    width: 5rem;
+    margin: 1rem
+  }
+
+  height: 7rem;
+  width: 7rem;
+  text-align: center;
+  margin: auto;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%23D2AF66FF' stroke-width='1' stroke-dasharray='8%2c 15' stroke-dashoffset='86' stroke-linecap='butt'/%3e%3c/svg%3e");
+  border-radius: 100px;
+
+}

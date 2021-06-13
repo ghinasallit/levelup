@@ -1,0 +1,37 @@
+<div class="container-fluid p-0">
+  <div class="row  no-gutters ">
+    <div class="col-md-12 py-5 bg-secondary bg-top">
+      <h1 class="text-white text-center font-family-octin font-weight-normal">{{'_Events' | translate}}</h1>
+    </div>
+    <div class="col-md-12 no-gutters">
+      <div class=" w-100 line"><img src="assets/images/details/line.svg" class="w-100" alt=""></div>
+    </div>
+    <div class="container mt-5">
+      <div class="row border border-primary radius-5 p-4 my-3" *ngFor="let item of events">
+        <div class="col-md-5">
+          <img [src]="restService.fileUrl + item.image" class="radius-5 w-100" alt="">
+          <div class="d-flex justify-content-between radius-5 border border-primary mt-3 px-3">
+            <h4 class="text-primary font-family-octin">
+              <p class="m-0">{{item.date | date: 'MMM'}}</p>
+              <p class="m-0">{{item.date | date: 'dd'}}</p>
+            </h4>
+            <div>
+              <h5 class="ml-2"> {{item.title}}</h5>
+              <div class=" w-100 line"><img src="assets/images/details/line.svg" class="w-100" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <h1 class="font-weight-normal text-uppercase font-family-octin"><span class="text-primary ">{{'_More' | translate}}</span> {{'_Details' | translate}}</h1>
+          <p> {{item.description}}</p>
+          <button class="btn btn-secondary bg-white border-dash-secondary mt-3 text-secondary px-4 text-uppercase font-family-octin">
+            {{'_Subscribe' | translate}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-5 ">
+      <img src="assets/images/home/levelup.png" class="w-100" alt="">
+    </div>
+  </div>
+</div>

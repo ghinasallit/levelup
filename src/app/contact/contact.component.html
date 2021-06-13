@@ -1,0 +1,76 @@
+<div class="container-fluid contact">
+  <div class="row  bg-secondary p-0">
+    <div class="col-md-12 text-center py-5 ">
+      <h1 class="text-white font-weight-normal font-family-octin">Contact us</h1>
+    </div>
+    <div class="col-md-12 p-0">
+      <img src="assets/images/details/line.svg" class="w-100" alt="">
+    </div>
+  </div>
+  <div class="row bg-success py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6  text-primary">
+          <h1 class="font-weight-normal font-family-octin">How Can</h1>
+          <h1 class="font-weight-normal font-family-octin">We Help</h1>
+          <h1 class="font-weight-normal font-family-octin">you today</h1>
+          <div class="d-flex mt-4 details">
+            <div class="mr-4 left-border-dash"></div>
+            <div class="">
+              <div class="text-secondary"><img src="assets/images/details/wieght.svg" alt="" class="mr-3 my-2"> Tel: +971 554 554 555</div>
+              <div class="text-secondary"><img src="assets/images/details/wieght.svg" alt="" class="mr-3 my-2"> Email: support@levelup.com</div>
+              <div class="text-secondary"><img src="assets/images/details/wieght.svg" alt="" class="mr-3 my-2"> Location: Business pay, Dubai, UAE</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 my-3">
+          <form [formGroup]="contactForm" class="text-center">
+            <input class="form-control radius-15 my-2" type="text" formControlName="name"
+                   placeholder="{{'_FullName' | translate}}">
+            <div class="text-left">
+              <div *ngIf=" (f.name.dirty || f.name.touched) "
+                   class="text-danger">
+                <div
+                  *ngIf="f.name.value != 1 && f.name.value.length == 0">{{'_ThisFiledIsRequired' | translate}}</div>
+              </div>
+            </div>
+            <input class="form-control radius-15 my-2" type="text" formControlName="email"
+                   placeholder="{{'_Email' | translate}}">
+            <div class="text-left ">
+              <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)"
+                   class="text-danger">
+                <div *ngIf="f.email.value.length == 0">{{'_ThisFiledIsRequired' | translate}}</div>
+                <div *ngIf="f.email.errors.email">{{'_EmailNotValid' | translate}}</div>
+              </div>
+            </div>
+            <textarea class="form-control radius-15 my-2" type="text" rows="4" formControlName="details"
+                      placeholder="{{'_Message' | translate}}"></textarea>
+            <div class="text-left">
+              <div *ngIf=" (f.details.dirty || f.details.touched) "
+                   class="text-danger">
+                <div
+                  *ngIf="f.details.value != 1 && f.details.value.length == 0">{{'_ThisFiledIsRequired' | translate}}</div>
+              </div>
+            </div>
+            <button class="btn btn-secondary radius-15 mt-3 px-5"
+                    [disabled]="contactForm.invalid" (click)="contcatus()">{{'_Submit' | translate}}</button>
+          </form>
+        </div>
+
+      </div>
+      <div class="row mt-4">
+        <div id="map-container-google-1" class="z-depth-1-half map-container w-100"  >
+          <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                  style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="row bg-success">
+    <div class="col-md-12 ">
+      <img src="assets/images/home/levelup.png" class="w-100" alt="">
+    </div>
+  </div>
+</div>

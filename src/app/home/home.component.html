@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12
+     banner p-0">
+      <div class="w-100">
+        <app-carousel></app-carousel>
+      </div>
+    </div>
+  </div>
+  <div class="row bg-primary position-relative px-0 list-classes">
+    <div class="position-absolute p-3 text-secondary bg-primary title title"><h3>{{'_Classes' | translate}}</h3></div>
+    <div class="col-md-6 p-0  class" *ngFor="let item of appService.categories">
+      <img [src]="restService.fileUrl + item.image" class="w-100 " alt="indoor cycling">
+      <div class="info">
+        <div><img [src]="restService.fileUrl + item.icon" class=" my-1 w-25" alt=""></div>
+        <div><p class="text-primary my-1">{{item.title}}</p></div>
+        <div><img src="assets/images/home/slashes.svg" class="w-25 my-1" alt=""></div>
+        <div>
+          <button
+            class="text-white text-center w-50 border btn btn-primary border-primary my-1" [routerLink]="'/details/' + item._id ">{{'_ReadMore' | translate}}</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row coming-soon py-5">
+    <div class="col-md-7">
+      <div class="d-flex justify-content-center p-4">
+        <div class="w-25 mt-5 "><img src="assets/images/home/child.png" class="w-100" alt="child"></div>
+        <div class="w-25 mt-5 mx-3"><img src="assets/images/home/woman.png" alt="woman" class="w-100 mt-5"></div>
+        <div class="w-30"><img src="assets/images/man.png" alt="man" class="w-100"></div>
+      </div>
+    </div>
+    <div class="col-md-5 m-auto pl-5 position-relative">
+      <div class="position-absolute slash"><img src="assets/images/home/slash.png" alt=""></div>
+      <h1 class="font-weight-normal text-uppercase  text-secondary">{{'_Coming' | translate}}</h1>
+      <h1 class="font-weight-normal text-uppercase text-secondary">{{'_Soon' | translate}}</h1>
+      <h1 class="font-weight-normal text-uppercase text-primary">{{'_New' | translate}}</h1>
+      <h1 class="font-weight-normal text-uppercase text-primary">{{'_Branch' | translate}}</h1>
+    </div>
+  </div>
+  <div class="row p-5 bg-success application position-relative">
+    <div class="col-md-12 position-absolute">
+      <img src="assets/images/home/levelup.png" class="w-100" alt="">
+    </div>
+    <div class="col-md-5 m-auto ">
+      <div class="w-75 m-auto">
+        <h1 class="text-secondary text-uppercase">{{'_Download' | translate}}</h1>
+        <h1 class="text-secondary  text-uppercase">{{'_Our' | translate}}</h1>
+        <h1 class="text-primary text-uppercase">{{'_MobileApp' | translate}}</h1>
+        <div class="mb-2"><img src="assets/images/home/google-play.png" class="w-50" alt="google play"></div>
+        <div><img src="assets/images/home/app-store.png" class="w-50" alt="app store"></div>
+      </div>
+    </div>
+    <div class="col-md-7 mt-2">
+      <img src="assets/images/home/app.png" class="w-100" alt="">
+    </div>
+  </div>
+</div>
